@@ -16,6 +16,7 @@ body{
 .loadpage{
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     justify-content: space-around;
     background-color:rgb(27, 27, 54);
     height: 100vh;
@@ -36,6 +37,39 @@ body{
     height: auto;
 }
 
+.bed{
+    height: 40vh;
+    width: 45vw;
+}
+.emptyBed{
+    height: 40vh;
+    width: 45vw;
+}
+
+.head{
+    height: 25vh;
+    width:10vw;
+}
+
+.spaceSuit{
+    height: 30vh;
+    width:10vw;
+}
+
+.saiyan{
+    height: 30vh;
+    width:10vw;
+}
+
+.spaceSuit{
+    height: 30vh;
+    width:10vw;
+}
+
+.defaultClothes{
+    height: 30vh;
+    width:10vw;
+}
 .begin{
     align-self:center;
     font-size: 4em;
@@ -51,4 +85,9 @@ body{
 
 .loadpage span{
     position: absolute;
+}
+
+.floor{
+    height: 20vh;
+    background-color: rgb(210, 180, 140);
 }
