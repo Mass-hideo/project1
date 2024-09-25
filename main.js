@@ -21,19 +21,18 @@ timeline
     // I haven't figured out how to separate the scenes
 
     // EVENTS TRIGGERED ON LOADING (Rocket flies across screen, text loads in, begin button shows)
-    // .fromTo(".rocket", {scale: 0,rotation: 0},{rotation: 0, scale: 1, y: "-300%", x:"-50%", ease:"steps(6)"})
-    // .fromTo(".rocket", {scale: 0, rotation: 120},{rotation: 160, delay: 2, scale: 1, y: "100%", x:"120%", ease:"steps(8)"})
-    // .fromTo(".rocket", {scale: 0,rotation: 0},{ rotation: 0, delay: 1, scale: 1, y: "-70%", x:"60%", ease:"steps(4)"})
-    // .from(".title", {y: "50%", opacity: "0", ease: "steps(8)"})
-    // .fromTo(".begin", {scale: 0, opacity: 0, y: "0%"},{delay: 1, scale: 1, opacity: 1, y: "100%", ease:"steps(4)"})
+    .fromTo(".rocket", {scale: 0,rotation: 0},{rotation: 0, scale: 1, y: "-300%", x:"-50%", ease:"steps(6)"})
+    .fromTo(".rocket", {scale: 0, rotation: 120},{rotation: 160, delay: 2, scale: 1, y: "100%", x:"120%", ease:"steps(8)"})
+    .fromTo(".rocket", {scale: 0,rotation: 0},{ rotation: 0, delay: 1, scale: 1, y: "-70%", x:"60%", ease:"steps(4)"})
+    .from(".title", {y: "50%", opacity: "0", ease: "steps(8)"})
+    .fromTo(".begin", {scale: 0, opacity: 0, y: "0%"},{delay: 1, scale: 1, opacity: 1, y: "100%", ease:"steps(4)"})
 
     //Loads in bed with a person on it, loads in the empty bed, and the default head and body, but at an opacity of 0. Should occur 
     //after the begin button starts. I want to add a basic bedroom around it, but I can't figure out how to.
     .fromTo(".bed", {scale: 0,rotation: 0},{rotation: 0, scale: 1, y: "-300%", x:"20%", ease:"bounce"})
     .fromTo(".emptyBed", {scale: 0,rotation: 0, opacity: 0},{rotation: 0, scale: 1, y: "-206%", x:"20%"})
-
     .fromTo(".defaultClothes", {scale: 0, opacity: 0},{opacity: 0, scale: 1, y: "-870%", x:"247%"})
-    .fromTo(".head", {scale: 0, opacity: 0},{opacity: 0, scale: 1, y: "-1070%", x:"242%"})
+    .fromTo(".head", {scale: 0, opacity: 0},{opacity: 0, scale: 1, y: "-1720%", x:"242%"})
     .fromTo(".spaceSuit", {scale: 0, opacity: 0},{opacity: 0, scale: 1, y: "-951%", x:"407%"})
     .fromTo(".saiyan", {scale: 0, opacity: 0},{opacity: 0, scale: 1, y: "-1151%", x:"557%"})
     .fromTo(".jedi", {scale: 0, opacity: 0},{opacity: 0, scale: 1, y: "-1291%", x:"707%"})
@@ -49,10 +48,10 @@ bedSelect
     .fromTo(".emptyBed", {opacity: 0},{opacity: 1})
     .fromTo(".defaultClothes", {opacity: 0},{opacity: 1})
     .fromTo(".head", {opacity: 0},{opacity: 1})
-    //These functions now work, it's just difficult to have a standard system of coordinates.
-    // .fromTo(".spaceSuit", {opacity: 0},{opacity: 1})
-    // .fromTo(".saiyan", {opacity: 0},{opacity: 1})
-    // .fromTo(".jedi", {opacity: 0},{opacity: 1})
+    // These functions now work, it's just difficult to have a standard system of coordinates.
+    .fromTo(".spaceSuit", {opacity: 0},{opacity: 1})
+    .fromTo(".saiyan", {opacity: 0},{opacity: 1})
+    .fromTo(".jedi", {opacity: 0},{opacity: 1})
 })
 
 const outfits = gsap.timeline({defaults:{duration: 1}})
