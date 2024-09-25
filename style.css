@@ -104,3 +104,19 @@ body{
     position: absolute;
     top:80%;
 } 
+
+.bold{
+    color:darkturquoise;
+}
+
+.wakeUp{
+    position: absolute;
+    top: 55%;
+    left: 65%;
+    font-size: 2em;
+    color: white;
+    padding: .5em;
+    background-color: tan;
+    border-radius: 25px;
+    border: 5px solid white;
+}

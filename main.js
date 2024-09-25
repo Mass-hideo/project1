@@ -30,6 +30,7 @@ timeline
     .fromTo(".spaceSuit", {opacity:0},{opacity:0})
     .fromTo(".saiyan", {opacity:0},{opacity:0})
     .fromTo(".jedi", {opacity:0},{opacity:0})
+    .fromTo(".wakeUp", {opacity:0},{opacity:0})
     //Includes these elements on page, but theyre invisible.
 
 const button = document.querySelector('.begin')
@@ -43,19 +44,18 @@ button.addEventListener("click", () =>{
 const spawnClothes = gsap.timeline({defaults:{duration:1}})
 spawnClothes
     .fromTo(".floor", {opacity:0, y:"200%"},{delay:4, opacity:1,ease: "bounce", y:"0%"})
-    .fromTo(".bed", {opacity:0, duration: 1},{opacity:1})
-//     .fromTo(".head", {scale: 0, opacity: 0},{opacity: 1, scale: 1})
-//     .fromTo(".spaceSuit", {scale: 0, opacity: 0},{opacity: 1, scale: 1})
-//     .fromTo(".saiyan", {scale: 0, opacity: 0},{opacity: 1, scale: 1})
-//     .fromTo(".jedi", {scale: 0, opacity: 0},{opacity: 1, scale: 1})
-//     .fromTo(".defaultClothes",{scale: 0, opacity: 0},{opacity: 1, scale: 1})
+    .fromTo(".bed", {opacity:0},{opacity:1})
+    .fromTo(".wakeUp", {opacity: 0},{opacity: 1})
 })
 
+const bed = document.querySelector(".bed")
 bed.addEventListener('click', () => {
+    const bedSelect = gsap.timeline({defaults:{duration:.5, ease:"steps(2)"}})
 bedSelect
-    .to(".bed", {opacity: 0})
-    .to(".emptyBed", {opacity: 1})
-    .fromTo(".defaultClothes", {opacity: 0},{opacity: 1})
+    .fromTo(".bed", {opacity: 1},{opacity: 0})
+    .fromTo(".emptyBed",{opacity: 0}, {opacity: 1})
+    .fromTo(".head", {opacity: 0},{opacity: 1})
+    .fromTo(".defaultClothes", {opacity: 0},{delay: 1, opacity: 1})
 })
 
 const selected = document.querySelectorAll(".outfit");
