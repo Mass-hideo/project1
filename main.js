@@ -31,6 +31,7 @@ timeline
     .fromTo(".saiyan", {opacity:0},{opacity:0})
     .fromTo(".jedi", {opacity:0},{opacity:0})
     .fromTo(".wakeUp", {opacity:0},{opacity:0})
+    .fromTo(".helpMilo", {opacity:0},{opacity:0})
     //Includes these elements on page, but theyre invisible.
 
 const button = document.querySelector('.begin')
@@ -55,7 +56,9 @@ bedSelect
     .fromTo(".bed", {opacity: 1},{opacity: 0})
     .fromTo(".emptyBed",{opacity: 0}, {opacity: 1})
     .fromTo(".head", {opacity: 0},{opacity: 1})
-    .fromTo(".defaultClothes", {opacity: 0},{delay: 1, opacity: 1})
+    .fromTo(".defaultClothes", {opacity: 0},{opacity: 1})
+    .fromTo(".wakeUp", {opacity: 1},{opacity: 0})
+    .fromTo(".helpMilo", {opacity: 0},{delay: 1, opacity: 1})
 })
 
 const selected = document.querySelectorAll(".outfit");
