@@ -39,14 +39,10 @@ body{
 
 .bed, .emptyBed{
     height: 40vh;
-    width: 45vw;
+    width: auto;
     position:absolute;
     top:60%;
     left: 10%;
-}
-.emptyBed{
-    height: 40vh;
-    width: 45vw;
 }
 
 .head{
@@ -83,7 +79,21 @@ body{
 .begin{
     align-self:center;
     font-size: 4em;
-    margin-bottom: 20vw;
+    margin-bottom: 40vw;
+    background-color: unset;
+    border: 0px;
+    color:indianred;
+    padding: 2px;
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color:whitesmoke;
+    -webkit-text-stroke-width: 2px;
+}
+
+.again{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    font-size: 4em;
     background-color: unset;
     border: 0px;
     color:indianred;
@@ -189,3 +199,105 @@ body{
     -webkit-text-stroke-color:whitesmoke;
     -webkit-text-stroke-width: 2px;
 }
+
+@media screen and (max-width: 700px) {
+    .title{
+        position: absolute;
+        top: 10%;
+        left: 30%;
+    }
+    
+    .begin{
+        position: absolute;
+        top: 50%;
+        left: 30%; 
+    }
+    .again{
+        position: absolute;
+        top: 50%;
+        left: 30%;
+    }
+    .wakeUp, .positive, .negative{
+        position: absolute;
+        top: 10%;
+        left: 30%;
+        font-size: 2em;
+        color: white;
+        padding: .5em;
+        background-color: tan;
+        border-radius: 25px;
+        border: 5px solid white;
+    }
+    
+    .helpMilo{
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        font-size: 2em;
+        color: white;
+        padding: .5em;
+        background-color: tan;
+        border-radius: 25px;
+        border: 5px solid white;
+    }
+    
+    .sure, .no{
+        position: absolute;
+        top: 60%;
+        left: 35%;
+        font-size: 2em;
+        color: tan;
+        padding: .5em;
+        background-color: white;
+        border-radius: 25px;
+        border: 5px solid tan;
+    }
+    
+    .sure:hover{
+        background-color:tan;
+        color:white;
+    }
+    
+    .no{
+        top: 80%;
+        color: black;
+        background-color:aquamarine;
+        border-color:white;
+    }
+    
+    .no:hover{
+        background-color: black;
+        color:aquamarine;
+    }
+    
+    .pickFit{
+        position: absolute;
+        top: 60%;
+        left: 65%;
+        font-size: 2em;
+        color: black;
+        padding: .5em;
+        background-color: white;
+        border-radius: 25px;
+        border: 5px solid black;
+    }
+    
+    .thanks{
+        position: absolute;
+        top: 40%;
+        left:27%;
+        align-self:center;
+        font-size: 4em;
+        margin-bottom: 20vw;
+        background-color: unset;
+        border: 0px;
+        color:indianred;
+        padding: 2px;
+        -webkit-text-stroke: 2px;
+        -webkit-text-stroke-color:whitesmoke;
+        -webkit-text-stroke-width: 2px;
+    }
+
+  }
+
+  
