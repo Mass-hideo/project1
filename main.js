@@ -32,7 +32,6 @@ timeline
     .fromTo(".jedi", {opacity:0},{opacity:0})
     .fromTo(".wakeUp", {opacity:0},{opacity:0})
     .fromTo(".helpMilo", {opacity:0},{opacity:0})
-    .fromTo(".pick", {opacity:0},{opacity:0})
     .fromTo(".sure", {opacity:0},{opacity:0})
     .fromTo(".no", {opacity:0},{opacity:0})
     .fromTo(".positive", {opacity:0},{opacity:0})
@@ -47,6 +46,12 @@ timeline
     .timeScale(3)
     .reverse()
 })
+
+const rocketSound = new Audio()
+rocketSound.src = "rocket.mp3"
+
+const yawn = new Audio()
+yawn.src = "yawn.mp3"
 
 button.addEventListener("click", () =>{
 const spawnClothes = gsap.timeline({defaults:{duration:1}})
@@ -66,27 +71,25 @@ bedSelect
     .fromTo(".defaultClothes", {opacity: 0},{opacity: 1})
     .fromTo(".wakeUp", {opacity: 1},{opacity: 0})
     .fromTo(".helpMilo", {opacity: 0},{delay: 1, opacity: 1})
-    .fromTo(".pick", {opacity:0},{delay: 2, opacity:1})
     .fromTo(".sure", {opacity:0},{opacity:1})
     .fromTo(".no", {opacity:0},{opacity:1})
 })
 
+bed.addEventListener('click', () => {
+    yawn.play();
+})
 const nextPage = gsap.timeline({defaults:{duration: .5}})
 
 const yes = document.querySelector(".sure")
 yes.addEventListener("click", () => {
-    gsap.fromTo(".pick", {opacity:1},{opacity:0})
     gsap.fromTo(".no", {opacity:1},{opacity:0})
     gsap.fromTo(".helpMilo", {opacity: 1},{opacity: 0})
     gsap.fromTo(".positive", {opacity:0},{opacity:1})
-
-    gsap.fromTo(".pick", {opacity:0},{opacity:1})
-
     const nextPage = gsap.timeline({defaults:{duration: .5}})
     nextPage.fromTo(".positive", {opacity:1},{delay: 4, opacity:0})
     nextPage.fromTo(".sure", {opacity:1}, {opacity:0})
     nextPage.fromTo(".emptyBed", {opacity:1}, {opacity:0})
-    gsap.fromTo(".pickFit", {opacity:0},{delay: 5, opacity:1})
+    nextPage.fromTo(".pickFit", {opacity:0},{opacity:1})
     // gsap.fromTo(".spaceSuit", {opacity:0},{delay:7, opacity:1})
     // gsap.fromTo(".saiyan", {opacity:0},{delay:7,opacity:1})
     // gsap.fromTo(".jedi", {opacity:0},{delay:7,opacity:1})
@@ -95,16 +98,14 @@ yes.addEventListener("click", () => {
 
 const no = document.querySelector(".no")
 no.addEventListener("click", () => {
-    gsap.fromTo(".pick", {opacity:1},{opacity:0})
     nextPage.fromTo(".sure", {opacity:1}, {opacity:0})
     gsap.fromTo(".positive", {opacity:1},{opacity:0})
     gsap.fromTo(".helpMilo", {opacity: 1},{opacity: 0})
     gsap.fromTo(".negative", {opacity:0},{opacity:1})
     nextPage.fromTo(".emptyBed", {opacity:1}, {opacity:0})
-
     nextPage.fromTo(".negative", {opacity:1},{delay: 4, opacity:0})
     nextPage.fromTo(".no", {opacity:1},{opacity:0})
-    gsap.fromTo(".pickFit", {opacity:0},{opacity:1})
+    nextPage.fromTo(".pickFit", {opacity:0},{opacity:1})
     
     // gsap.fromTo(".spaceSuit", {opacity:0},{delay:7, opacity:1})
     // gsap.fromTo(".saiyan", {opacity:0},{delay:7,opacity:1})
@@ -113,14 +114,17 @@ no.addEventListener("click", () => {
 
 const launch = document.querySelector(".pickFit")
 launch.addEventListener("click", () => {
-    gsap.fromTo(".pick", {opacity:1},{opacity:0})
+    gsap.fromTo(".pickFit", {opacity:0},{delay: 5, opacity:1})
     gsap.fromTo(".head", {opacity:1}, {opacity:0})
     gsap.fromTo(".defaultClothes", {opacity:1}, {opacity:0})
-    gsap.fromTo(".rocket", {scale: 1,rotation: 0,y: "-70%", x:"30%"},{ rotation: 30, delay: 3, scale: 0, y: "-300%", x:"60%", ease:"steps(4)"})
-    gsap.fromTo(".pickFit", {opacity:1},{opacity:0})
+    gsap.fromTo(".rocket", {scale: 1,rotation: 0,y: "-70%", x:"30%"},{ rotation: 30, delay: 5, scale: 0, y: "-300%", x:"60%", ease:"steps(4)"})
     gsap.fromTo(".floor", {opacity:1, y:"0%"},{delay:4, opacity:1,ease: "bounce", y:"200%"})
-    .fromTo(".thanks", {opacity:0},{opacity:1})
+    gsap.fromTo(".thanks", {opacity:0},{delay:4, opacity:1})
+    gsap.fromTo(".pickFit", {opacity:1},{opacity:0})
 
+})
+launch.addEventListener("click", () => {
+    rocketSound.play();
 })
 
 // const selected = document.querySelectorAll(".outfit");
