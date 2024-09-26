@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", (event) =>{
 
     for(let i = 0; i < 100; i++){
         const stars = document.createElement('span');
-        stars.innerHTML = '✨';
+        stars.innerHTML = '.';
         stars.style.top = getRndInteger(0, container.clientHeight) + 'px';
         stars.style.left = getRndInteger(0, container.clientWidth) + 'px';
         container.appendChild(stars);
+        stars.style.color = "white";
+
     }
 
 });
@@ -31,7 +33,7 @@ const timeline = gsap.timeline({defaults:{duration:1}});
 timeline
     .fromTo(".rocket", {scale: 0,rotation: 0},{rotation: 0, scale: 1, y: "-700%", x:"-50%", ease:"steps(6)"})
     .fromTo(".rocket", {scale: 0, rotation: 120},{rotation: 160, delay: 2, scale: 1, y: "200%", x:"120%", ease:"steps(16)"})
-    .fromTo(".rocket", {scale: 0,rotation: 0},{ rotation: 0, delay: 1, scale: 1, y: "-70%", x:"60%", ease:"steps(4)"})
+    .fromTo(".rocket", {scale: 0,rotation: 0},{ rotation: 0, delay: 1, scale: 1, y: "0%", x:"60%", ease:"steps(4)"})
     .from(".title", {y: "50%", opacity: "0", ease: "steps(8)"})
     .fromTo(".begin", {scale: 0, opacity: 0, y: "0%"},{delay: 1, scale: 1, opacity: 1, y: "100%", ease:"steps(4)"})
     .fromTo(".floor", {opacity:0},{opacity:0})
@@ -153,7 +155,7 @@ launch.addEventListener("click", () => {
     gsap.fromTo(".pickFit", {opacity:0},{delay: 5, opacity:1})
     gsap.fromTo(".head", {opacity:1}, {opacity:0})
     gsap.fromTo(".defaultClothes", {opacity:1}, {opacity:0})
-    gsap.fromTo(".rocket", {scale: 1,rotation: 0,y: "-70%", x:"30%"},{ rotation: 30, delay: 5, scale: 0, y: "-300%", x:"60%", ease:"steps(4)"})
+    gsap.fromTo(".rocket", {scale: 1,rotation: 0,y: "20%", x:"30%"},{ rotation: 30, delay: 5, scale: 0, y: "-300%", x:"60%", ease:"steps(4)"})
     gsap.fromTo(".floor", {opacity:1, y:"0%"},{delay:4, opacity:1,ease: "bounce", y:"200%"})
     gsap.fromTo(".thanks", {opacity:0},{delay:4, opacity:1})
     gsap.fromTo(".pickFit", {opacity:1},{opacity:0})

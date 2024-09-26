@@ -24,9 +24,10 @@ body{
 }
 
 .title{
-    align-self:center;
+    position: absolute;
+    top: 20%;
+    left: 30%;
     font-size: 5em;
-    padding-top:10vw; 
     color:whitesmoke;
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-width: 3px;
@@ -77,9 +78,10 @@ body{
 }
 
 .begin{
-    align-self:center;
+    position: absolute;
+    top: 40%;
+    left: 45%;
     font-size: 4em;
-    margin-bottom: 40vw;
     background-color: unset;
     border: 0px;
     color:indianred;
