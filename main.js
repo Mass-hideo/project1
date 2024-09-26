@@ -38,6 +38,7 @@ timeline
     .fromTo(".positive", {opacity:0},{opacity:0})
     .fromTo(".negative", {opacity:0},{opacity:0})
     .fromTo(".pickFit", {opacity:0},{opacity:0})
+    .fromTo(".thanks", {opacity:0},{opacity:0})
     //Includes these elements on page, but theyre invisible.
 
 const button = document.querySelector('.begin')
@@ -118,7 +119,7 @@ launch.addEventListener("click", () => {
     gsap.fromTo(".rocket", {scale: 1,rotation: 0,y: "-70%", x:"30%"},{ rotation: 30, delay: 3, scale: 0, y: "-300%", x:"60%", ease:"steps(4)"})
     gsap.fromTo(".pickFit", {opacity:1},{opacity:0})
     gsap.fromTo(".floor", {opacity:1, y:"0%"},{delay:4, opacity:1,ease: "bounce", y:"200%"})
-
+    .fromTo(".thanks", {opacity:0},{opacity:1})
 
 })
 

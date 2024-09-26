@@ -173,3 +173,9 @@ body{
     border-radius: 25px;
     border: 5px solid black;
 }
+
+.thanks{
+    position: absolute;
+    top: 50%;
+    left:50%;
+}
